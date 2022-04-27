@@ -2,6 +2,8 @@
 
 API - Challenge
 
+simple API no database
+
 1. Make an API `/api/rot13/<some word>` that will read the <some word> and encode it with rot13 encoding before returning it to the user.
 
 2. Once that's working, make another endpoint `/api/rot13` that's a POST that takes in a JSON request with the word like `{"word": <some word>}`, does the encoding and sends back the response.

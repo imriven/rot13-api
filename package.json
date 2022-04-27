@@ -1,0 +1,29 @@
+{
+  "name": "rot13-api",
+  "version": "1.0.0",
+  "description": "API - Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imriven/rot13-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imriven/rot13-api/issues"
+  },
+  "homepage": "https://github.com/imriven/rot13-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "helmet": "^5.0.2",
+    "knex": "^2.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
