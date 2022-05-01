@@ -12,6 +12,6 @@ server.use(express.json());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use("/api/rot13", rotRouter);
-server.use("/api/catFacts", catFactsRouter);
+// server.use("/api/catFacts", catFactsRouter);
 
 module.exports = server;
