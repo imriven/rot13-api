@@ -23,4 +23,15 @@ router.get("/:string", (req, res) => {
   res.status(200).json(result.join(""));
 });
 
+
+router.post("/", (req, res) => {
+  let someWord = req.body.word.split("");
+  let result = [];
+  someWord.forEach((letter) => {
+    result.push(Rot13Dict[letter]);
+  });
+
+  res.status(200).json({"result":result.join(""), "original":req.body.word});
+});
+
 module.exports = router;
