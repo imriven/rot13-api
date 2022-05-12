@@ -6,32 +6,34 @@ let CatFacts = "https://catfact.ninja/fact";
 
 
 
-router.get("/:number", (req, res) => {
-    let result;
+router.get("/:number", async (req, res) => {
     let number = parseInt(req.params.number)
-    let array = new Array(number);
+        
+    if (number > 3 || number < 1) {
+        res.status(416).json("Error : Please choose a number between 1-3")
+        return 
+    }
+
+
+   let array = Array.apply(null, Array(number));
     let facts = []
 
-    array.forEach(async (fact) => {
-    try {
-       result = await axios.get(CatFacts)
-    } catch (err) {
-        console.log(err)
-    }
-        facts.push(result.data.fact)
+
+    array.forEach(() => {
+   
+        facts.push(axios.get(CatFacts));
+       
     })
 
-     res.status(200).json(facts);
-    
-   
+    let results = await Promise.all(facts)
+let newResults= results.map(r=> r.data.fact)
 
-    //  facts.push(res.status(200).json(result.data.fact));
-    
-    // if (number > 3) {
-    // res.status(416).json(result);
-// }
 
-//   res.status(200).json(result.join(""));
+
+    console.log(newResults)
+     res.status(201).json(newResults);
+    
+
 });
 module.exports = router;
 
